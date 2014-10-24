@@ -43,17 +43,12 @@ Polipo web interface now available on `http://localhost:3111/polipo/`
 # Configuration
 
 ## Cache Store
-For cache persistency you should mount a volume
+For cache persistency you should mount a volume `/var/cache/polipo`
 
 ```bash
-/var/cache/polipo
-```
-
-```bash
-mkdir /opt/data/polipo/cache
 docker run --name='polipo' -d \
   -p 3111:3111 \
-  -v /opt/data/polipo:/var/cache/polipo \
+  -v /opt/data/polipo/cache:/var/cache/polipo \
   burkostya/polipo:1.1.1
 ```
 
